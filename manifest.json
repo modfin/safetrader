@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+
+  "name": "Safetrader",
+  "description": "Automatically keep track of stock trades that need special authorization",
+  "version": "0.1",
+
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+
+  "content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'",
+
+  "permissions": [
+    "activeTab",
+    "identity",
+    "*://*.google.com/*"
+  ],
+
+  "oauth2": {
+    "client_id": "663745837623-k2k1ndjdrorpqnltsk3q57558p8gi6vl.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/spreadsheets.readonly"
+    ]
+  },
+
+  "background": {
+    "scripts": [
+      "keys.js",
+      "api.js",
+      "background.js"
+    ]
+  }
+}
